@@ -14,17 +14,25 @@ def basket_check_args(spot, vol, corr_m, weights):
 
 def basket_price_mc_cv(
     strike, spot, vol, weights, texp, cor_m, 
-    intr=0.0, divr=0.0, cp_sign=1, n_samples = 10000
+    intr=0.0, divr=0.0, cp_sign=1, n_samples=10000, seed=8888
 ):
     # price1 = MC based on BSM
+    np.random.seed(seed)
     price1 = basket_price_mc(
         strike, spot, vol, weights, texp, cor_m,
         intr, divr, cp_sign, True, n_samples)
     
     ''' 
-    compute price2 and price3 based on normal model
+    compute price2: mc price based on normal model
+    make sure you use the same seed
     '''
+    np.random.seed(seed)
     price2 = 0
+
+    ''' 
+    compute price2: analytic price based on normal model
+    make sure you use the same seed
+    '''
     price3 = 0
     
     return price1 - (price2 - price3)
