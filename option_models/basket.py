@@ -29,13 +29,20 @@ def basket_price_mc_cv(
     ''' 
     compute price2: mc price based on normal model
     make sure you use the same seed
-    '''
+
     np.random.seed(seed)
+    price2 = basket_price_mc(
+        strike, spot, spot*vol, weights, texp, cor_m,
+        intr, divr, cp_sign, False, n_samples)
+    '''
     price2 = 0
 
     ''' 
-    compute price2: analytic price based on normal model
+    compute price3: analytic price based on normal model
     make sure you use the same seed
+    
+    price3 = basket_price_norm_analytic(
+        strike, spot, vol, weights, texp, cor_m, intr, divr, cp_sign)
     '''
     price3 = 0
     
@@ -60,7 +67,7 @@ def basket_price_mc(
     
     if( bsm ) :
         '''
-        put your code here
+        put the geometric brownian motion here
         '''
         pass
     else:
