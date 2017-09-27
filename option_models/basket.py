@@ -11,7 +11,11 @@ def basket_check_args(spot, vol, corr_m, weights):
     '''
     This function simply checks that the size of the vector (matrix) are consistent
     '''
-
+    n = spot.size
+    assert( n == vol.size )
+    assert( corr_m.shape == (n, n) )
+    return None
+    
 def basket_price_mc_cv(
     strike, spot, vol, weights, texp, cor_m, 
     intr=0.0, divr=0.0, cp_sign=1, n_samples=10000, seed=8888
@@ -42,6 +46,8 @@ def basket_price_mc(
     strike, spot, vol, weights, texp, cor_m,
     intr=0.0, divr=0.0, cp_sign=1, bsm=True, n_samples = 10000
 ):
+    basket_check_args(spot, vol, cor_m, weights)
+    
     div_fac = np.exp(-texp*divr)
     disc_fac = np.exp(-texp*intr)
     forward = spot / disc_fac * div_fac
