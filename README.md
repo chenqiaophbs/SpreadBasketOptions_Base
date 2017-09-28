@@ -12,5 +12,4 @@ The final price (MC + control variate) is given as __A - (B-C)__.
 You may consider implementing other analytic methods:
 
 * Kirk's approximation: covered in class
-* Li's method:
-* 
+* More to come later
