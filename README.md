@@ -10,8 +10,9 @@ The final price (MC + control variate) is given as __A - (B-C)__.
 
 ## Suggestions for final projects
 
-* [Spread option] Very accurate analytic approximation for spread options by [Li et al, 2006](https://ssrn.com/abstract_id=952747)
-(Also implement Kirk's approximation covered in class): Implement the method in a new class. In python notebook, summarize the method, write a quick help and report strength and weakness.
+* [Spread option] Very accurate analytic approximation for spread options by [Li et al, 2006](https://ssrn.com/abstract_id=952747). 
+Also implement Kirk's approximation covered in class and [(Bjersund, Stensland 2014)](http://ssrn.com/abstract_id=1145206). Implement each method in a new class. In python notebook, summarize the method, write a quick help and report strength and weakness. Compare the three methods.
+
 * [Basket+Asian option] Pick one method in the following 3 methods in survey of basket option pricing (Krekel at al, 2004, Wilmott magazine, July, 82-89): Implement the method in a new class. In python notebook, summarize the method, write a quick help and report strength and weakness.
   * a) Beisser's conditional expectation 
   * c) Levy's log-normal moment matching
